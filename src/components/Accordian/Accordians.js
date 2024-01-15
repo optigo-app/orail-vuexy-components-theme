@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Accordian = () => {
+const Accordians = () => {
   return (
     <div>Accordian</div>
   )
 }
 
-export default Accordian
+export default Accordians
