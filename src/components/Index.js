@@ -6,6 +6,7 @@ export default function Index() {
     <div>
         <ul>
             <li><Link to='/alerts'>Alerts</Link></li>
+            <li><Link to='/accordions'>Accordions</Link></li>
         </ul>
     </div>
   )
