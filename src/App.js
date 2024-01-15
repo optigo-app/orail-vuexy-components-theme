@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Index from './components/Index'
 import Accordians from './components/Accordian/Accordians';
 import List from './components/List/List';
+import TreeView from './components/TreeView/TreeView';
 
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       <Route path='/alerts' element={<Alerts />} /> 
       <Route path='/accordions' element={<Accordians />} />
       <Route path='/list' element={<List />} />
+      <Route path='/treeview' element={<TreeView />} />
       
     </Routes>
    </BrowserRouter>
