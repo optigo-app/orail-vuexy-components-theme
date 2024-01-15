@@ -3,7 +3,6 @@ import Alerts from './components/Alerts/Alerts'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Index from './components/Index'
 import Accordians from './components/Accordian/Accordians';
-import List from './components/List/List';
 
 
 export default function App() {
@@ -12,8 +11,7 @@ export default function App() {
     <Routes>
       <Route path='/' element={<Index />} /> 
       <Route path='/alerts' element={<Alerts />} /> 
-      <Route path='/accordions' element={<Accordians />} /> 
-      <Route path='/list' element={<List />} /> 
+      <Route path='/accordions' element={<Accordians />} />
       
     </Routes>
    </BrowserRouter>
