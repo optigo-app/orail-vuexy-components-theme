@@ -23,13 +23,6 @@ export default function App() {
       <Route path='/treeview' element={<TreeView />} />
       <Route path='/treeview' element={<TreeView />} />
       <Route path='/textfields' element={<TextFields />} /> 
-      <Route path='/textfields' element={<TextFields />} /> 
-      
-      <Route path='/dailogs' element={<Dailogs />} /> 
-      <Route path='/Avatars' element={<Avatars />} /> 
-      <Route path='/Menu' element={<MenuList />} /> 
-      <Route path='/DatePicker' element={<DatePickers />} /> 
-      <Route path='/TextArea' element={<TextArea />} /> 
       <Route path='/dailogs' element={<Dailogs />} /> 
       <Route path='/Avatars' element={<Avatars />} /> 
       <Route path='/Menu' element={<MenuList />} /> 
