@@ -1,9 +1,15 @@
-import React from 'react'
-
+import React from "react";
+import AccordionSimple from "./AccordionSimple.jsx";
+import AccordionCustomize from "./AccordionCustomize.jsx";
+import AccordionAdvanced from "./AccordionAdvanced.jsx";
 const Accordians = () => {
   return (
-    <div>Accordian</div>
-  )
-}
+    <div>
+      <AccordionSimple />
+      <AccordionCustomize />
+      <AccordionAdvanced />
+    </div>
+  );
+};
 
-export default Accordians
+export default Accordians;
