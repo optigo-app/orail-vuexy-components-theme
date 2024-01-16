@@ -5,26 +5,28 @@ import { forwardRef } from 'react'
 import { styled } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
 
-const TextFieldStyled = styled(TextField)(({ theme, customColor }) => ({
+const TextFieldStyled = styled(TextField)(({ theme, customBorderColor, borderoutlinedColor, customTextColor, customFontSize }) => ({
   alignItems: 'flex-start',
   '& .MuiInputLabel-root': {
     transform: 'none',
     lineHeight: 1.154,
     position: 'relative',
     marginBottom: theme.spacing(1),
-    fontSize: theme.typography.body2.fontSize,
-    color: `${theme.palette.text.primary} !important`
+    // fontSize: theme.typography.body2.fontSize,
+    fontSize: customFontSize,
+    // color: `${theme.palette.text.primary} !important`
+    color: `${customTextColor} !important`
   },
   '& .MuiInputBase-root': {
     borderRadius: 8,
     backgroundColor: 'transparent !important',
     // border: `1px solid rgba(${theme.palette.customColors?.main}, 0.2)`,
-    border: `1px solid ${customColor}`,
-    transition: theme.transitions.create(['border-color', ''], {
+    border: `1px solid ${customBorderColor}`,
+    transition: theme.transitions.create(['border-color'], {
       duration: theme.transitions.duration.shorter
     }),
     '&:not(.Mui-focused):not(.Mui-disabled):not(.Mui-error):hover': {
-      borderColor: `${customColor}`
+      borderColor: `${customBorderColor}`
     },
     '&:before, &:after': {
       display: 'none'
@@ -36,12 +38,12 @@ const TextFieldStyled = styled(TextField)(({ theme, customColor }) => ({
       borderColor: theme.palette.error?.main
     },
     '&.Mui-focused': {
-      boxShadow: theme.shadows[2],
+      boxShadow: theme.shadows[0],
       '& .MuiInputBase-input:not(.MuiInputBase-readOnly):not([readonly])::placeholder': {
         transform: 'translateX(4px)'
       },
       '&.MuiInputBase-colorPrimary': {
-        borderColor: '#7367F0'
+        borderColor: `${borderoutlinedColor}`
       },
       '&.MuiInputBase-colorSecondary': {
         borderColor: theme.palette.secondary?.main
@@ -163,7 +165,10 @@ const CustomTextField = forwardRef((props, ref) => {
 
   return (
     <TextFieldStyled
-      customColor={props?.customColor}
+      customBorderColor={props?.customBorderColor}
+      borderoutlinedColor={props?.borderoutlinedColor}
+      customTextColor={props?.customTextColor}
+      customFontSize={props?.customFontSize}
       size={size}
       inputRef={ref}
       {...rest}
