@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Index from './components/Index'
 import Accordians from './components/Accordian/Accordians';
 import Lists from './components/List/Lists';
-import TreeView from './components/TreeView/TreeView';
+import TreeViews from './components/TreeViews/TreeViews';
 import TextFields from './components/TextFields/TextFields';
 import Dailogs from './components/Dailogs/Dailogs'
 import Avatars from './components/Avatars/Avatars'
@@ -20,8 +20,7 @@ export default function App() {
       <Route path='/alerts' element={<Alerts />} /> 
       <Route path='/accordions' element={<Accordians />} />
       <Route path='/list' element={<Lists />} />
-      <Route path='/treeview' element={<TreeView />} />
-      <Route path='/treeview' element={<TreeView />} />
+      <Route path='/treeviews' element={<TreeViews />} />
       <Route path='/textfields' element={<TextFields />} /> 
       <Route path='/textfields' element={<TextFields />} /> 
       
