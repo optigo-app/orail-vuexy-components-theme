@@ -35,27 +35,27 @@ export default function Avatars() {
       <h1>Letter Avatars</h1>
       <Box className='demo-space-x' sx={{ display: 'flex' }}>
         <MuiAvatar>H</MuiAvatar>
-        <Avatar>N</Avatar>
-        <Avatar skin='light' color='error'>
+        <Avatar style={{    color: '#FF',margin : '10px',backgroundColor: '#7367F0'}}>N</Avatar>
+        <Avatar style={{    color: '#EA5455',margin : '10px',backgroundColor: 'rgba(234, 84, 85, 0.16)'}}>
           OP
         </Avatar>
-        <Avatar skin='light-static' color='error'>
+        <Avatar style={{    color: '#EA5455',margin : '10px',backgroundColor: 'rgba(234, 84, 85, 0.16)'}}>
           AB
         </Avatar>
       </Box>
 
       <h1>Variants</h1>
       <Box className='demo-space-x' sx={{ display: 'flex' }}>
-        <Avatar variant='square'>
+        <Avatar variant='square' style={{ backgroundColor: '#7367F0', margin: '10px' }}>
           <IconifyIcon icon='tabler:bell' />
         </Avatar>
-        <Avatar color='success' variant='rounded'>
+        <Avatar style={{ backgroundColor: '#28C76F', margin: '10px' }} color='success' variant='rounded'>
           <IconifyIcon icon='tabler:device-floppy' />
         </Avatar>
-        <Avatar skin='light' variant='square'>
+        <Avatar style={{ backgroundColor: 'rgba(115, 103, 240, 0.16)', color: '#7367F0', margin: '10px' }} skin='light' variant='square'>
           <IconifyIcon icon='tabler:bell' />
         </Avatar>
-        <Avatar skin='light' color='success' variant='rounded'>
+        <Avatar style={{ backgroundColor: 'rgba(40, 199, 111, 0.16)', color: '#28C76F', margin: '10px' }} skin='light' color='success' variant='rounded'>
           <IconifyIcon icon='tabler:device-floppy' />
         </Avatar>
       </Box>
