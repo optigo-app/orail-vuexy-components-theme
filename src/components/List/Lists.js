@@ -6,7 +6,7 @@ import ListItemText from '@mui/material/ListItemText'
 import ListItemButton from '@mui/material/ListItemButton'
 import { Fragment, useState } from 'react'
 import { Icon } from '@iconify/react'
-import { Avatar, Box, Checkbox, Collapse, Container, Grid, IconButton, ListItemAvatar, ListItemSecondaryAction, ListSubheader, Paper, Switch } from '@mui/material';
+import { Avatar, Box, Checkbox, Collapse, Container, Grid, IconButton, ListItemAvatar, ListItemSecondaryAction, ListSubheader, Paper, Switch, Button, Typography  } from '@mui/material';
 import { makeStyles, styled } from '@mui/styles';
 
 // ** Custom Component Imports
@@ -42,14 +42,14 @@ const SelectedListItems = styled(Box)(({ theme }) => ({
 }));
 
 const CheckBoxes = styled(Checkbox)(({ theme }) => ({
-  color: "#a8a6ae !important", 
+  color: "#a8a6ae !important",
   '& span': {
   },
   "& input": {
-},
-'&.selected': {
-  color: "#7367F0 !important", 
-}
+  },
+  '&.selected': {
+    color: "#7367F0 !important",
+  }
 }));
 
 const SwitchCheckBoxes = styled(Switch)(({ theme }) => ({
@@ -57,25 +57,37 @@ const SwitchCheckBoxes = styled(Switch)(({ theme }) => ({
   verticalAlign: "middle",
   marginRight: "-8px",
   width: "54px",
-  height: "42px",  
+  height: "42px",
   border: "1px solid #d5d5d8 !important",
-'& span': {
-  // backgroundColor: "transparent !important",
-  // background: "transparent !important",
-  // border: "1px solid #d5d5d8 !important",
-  // borderRadius: "10px !important",
-  // width: '54px !important',
-  // height: '42px !important',
-  // zIndex: "0",
-  // verticalAlign: "middle",
-  // marginRight: "-8px",
-  // width: "54px",
-  // height: "42px",
-
-}
+  '& span': {
+  }
 }));
 
-
+const StyledList = styled(List)(({ theme }) => ({
+  '& .MuiListItem-container': {
+    border: "1px solid rgba(47, 43, 61, 0.16)",
+    '&:first-of-type': {
+      borderTopLeftRadius: "6px",
+      borderTopRightRadius: "6px"
+    },
+    '&:last-child': {
+      borderBottomLeftRadius: "6px",
+      borderBottomRightRadius: "6px"
+    },
+    '&:not(:last-child)': {
+      borderBottom: 0
+    },
+    '& .MuiListItem-root': {
+      paddingRight: "24px"
+    },
+    '& .MuiListItemText-root': {
+      marginTop: 0,
+      '& .MuiTypography-root': {
+        fontWeight: 500
+      }
+    }
+  }
+}))
 
 const Lists = () => {
   const [open, setOpen] = useState(true);
@@ -114,6 +126,52 @@ const Lists = () => {
     }
     setSwitchChecked(newChecked)
   }
+
+  const switchStyle = {
+    '&.MuiSwitch-sizeMedium': {
+      zIndex: "0 !important",
+      verticalAlign: "middle !important",
+      marginRight: "-8px !important",
+      width: "54px !important",
+      height: "42px !important",
+      border: "0 !important",
+    },
+    '& .MuiSwitch-switchBase.MuiSwitch-colorPrimary': {
+      top: "6px !important",
+      right: "12px !important",
+
+    },
+    '& .PrivateSwitchBase-root .MuiSwitch-thumb': {
+      right: "0px!important",
+      position: "relative!important",
+      width: "12px!important",
+      height: "12px!important",
+      color: "#d5d5d8 !important",
+      top: "1px",
+    },
+    '& .Mui-checked.PrivateSwitchBase-root .MuiSwitch-thumb': {
+      right: "8px!important",
+      position: "relative!important",
+      width: "12px!important",
+      height: "12px!important",
+      color: "#fff !important",
+    },
+    '& .MuiSwitch-track': {
+      borderRadius: "20px !important",
+      backgroundColor: "#fff !important",
+      border: "1.5px solid #909090",
+    },
+    '& PrivateSwitchBase-root +.MuiSwitch-track': {
+      opacity: "1 !important",
+    },
+    '& .Mui-checked.PrivateSwitchBase-root +.MuiSwitch-track': {
+      backgroundColor: "#7367f0 !important",
+      opacity: "1 !important",
+      border: "1.5px solid #7367f0!important",
+    }
+  }
+
+  const [stickyChecked, setStickyChecked] = useState(['wifi', 'location']);
 
 
   return (
@@ -406,7 +464,7 @@ const Lists = () => {
                   <CheckBoxes
                     edge='end'
                     tabIndex={-1}
-                    disableRipple 
+                    disableRipple
                     onChange={handleToggle(2)}
                     checked={checked.indexOf(2) !== -1}
                     inputProps={{ 'aria-labelledby': 'checkbox-list-label-2' }}
@@ -423,67 +481,184 @@ const Lists = () => {
         <Box sx={{ boxShadow: 3, borderRadius: 1 }} m={2}>
           <Box sx={{ fontSize: "18px", fontWeight: 400, padding: 2 }}>List with Switch</Box>
           {/* <Box sx={{ fontSize: "0.8203125rem", fontWeight: 500, color: "rgba(47, 43, 61, 0.42)", paddingX: 2, paddingBottom: 2}}>SETTINGS</Box> */}
-          <List subheader={<ListSubheader sx={{ fontSize: "0.8203125rem", fontWeight: 500, color: "rgba(47, 43, 61, 0.42)",textTransform: "uppercase", lineHeight: "120%"  }}>Settings</ListSubheader>} sx={{paddingX: 2}}>
-      <ListItem>
-        <ListItemIcon>
-          <Icon icon='tabler:wifi' fontSize={20} />
-        </ListItemIcon>
-        <ListItemText primary='Wi-Fi' />
-        <ListItemSecondaryAction>
-          <SwitchCheckBoxes edge='end' checked={switchChecked.indexOf('wifi') !== -1} onChange={handleToggleSwitch('wifi')} />
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemIcon>
-          <Icon icon='tabler:bluetooth' fontSize={20} />
-        </ListItemIcon>
-        <ListItemText primary='Bluetooth' />
-        <ListItemSecondaryAction>
-          <SwitchCheckBoxes edge='end' checked={switchChecked.indexOf('bluetooth') !== -1} onChange={handleToggleSwitch('bluetooth')} />
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemIcon>
-          <Icon icon='tabler:map-pin' fontSize={20} />
-        </ListItemIcon>
-        <ListItemText primary='Location' />
-        <ListItemSecondaryAction>
-          <SwitchCheckBoxes edge='end' checked={switchChecked.indexOf('location') !== -1} onChange={handleToggleSwitch('location')} />
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemIcon>
-          <Icon icon='tabler:plane-tilt' fontSize={20} />
-        </ListItemIcon>
-        <ListItemText primary='Airplane Mode' />
-        <ListItemSecondaryAction>
-          <SwitchCheckBoxes edge='end' checked={switchChecked.indexOf('airplane') !== -1} onChange={handleToggleSwitch('airplane')} />
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemIcon>
-          <Icon icon='tabler:broadcast' fontSize={20} />
-        </ListItemIcon>
-        <ListItemText primary='Hotspot' />
-        <ListItemSecondaryAction>
-          <SwitchCheckBoxes edge='end' checked={switchChecked.indexOf('hotspot') !== -1} onChange={handleToggleSwitch('hotspot')} />
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemIcon>
-          <Icon icon='tabler:circle-minus' fontSize={20} />
-        </ListItemIcon>
-        <ListItemText primary='Do not disturb' />
-        <ListItemSecondaryAction>
-          <SwitchCheckBoxes
-            edge='end'
-            checked={switchChecked.indexOf('do-not-disturb') !== -1}
-            onChange={handleToggle('do-not-disturb')}
-          />
-        </ListItemSecondaryAction>
-      </ListItem>
-    </List>
+          <List subheader={<ListSubheader sx={{ fontSize: "0.8203125rem", fontWeight: 500, color: "rgba(47, 43, 61, 0.42)", textTransform: "uppercase", lineHeight: "120%" }}>Settings</ListSubheader>} sx={{ paddingX: 2 }}>
+            <ListItem>
+              <ListItemIcon>
+                <Icon icon='tabler:wifi' fontSize={20} />
+              </ListItemIcon>
+              <ListItemText primary='Wi-Fi' />
+              <ListItemSecondaryAction>
+                <SwitchCheckBoxes
+                  sx={switchStyle}
+                  edge='end'
+                  checked={switchChecked.indexOf('wifi') !== -1} onChange={handleToggleSwitch('wifi')} />
+              </ListItemSecondaryAction>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <Icon icon='tabler:bluetooth' fontSize={20} />
+              </ListItemIcon>
+              <ListItemText primary='Bluetooth' />
+              <ListItemSecondaryAction>
+                <SwitchCheckBoxes edge='end' checked={switchChecked.indexOf('bluetooth') !== -1} onChange={handleToggleSwitch('bluetooth')} sx={switchStyle} />
+              </ListItemSecondaryAction>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <Icon icon='tabler:map-pin' fontSize={20} />
+              </ListItemIcon>
+              <ListItemText primary='Location' />
+              <ListItemSecondaryAction>
+                <SwitchCheckBoxes edge='end' checked={switchChecked.indexOf('location') !== -1} onChange={handleToggleSwitch('location')} sx={switchStyle} />
+              </ListItemSecondaryAction>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <Icon icon='tabler:plane-tilt' fontSize={20} />
+              </ListItemIcon>
+              <ListItemText primary='Airplane Mode' />
+              <ListItemSecondaryAction>
+                <SwitchCheckBoxes edge='end' checked={switchChecked.indexOf('airplane') !== -1} onChange={handleToggleSwitch('airplane')} sx={switchStyle} />
+              </ListItemSecondaryAction>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <Icon icon='tabler:broadcast' fontSize={20} />
+              </ListItemIcon>
+              <ListItemText primary='Hotspot' />
+              <ListItemSecondaryAction>
+                <SwitchCheckBoxes edge='end' checked={switchChecked.indexOf('hotspot') !== -1} onChange={handleToggleSwitch('hotspot')} sx={switchStyle} />
+              </ListItemSecondaryAction>
+            </ListItem>
+            <ListItem>
+              <ListItemIcon>
+                <Icon icon='tabler:circle-minus' fontSize={20} />
+              </ListItemIcon>
+              <ListItemText primary='Do not disturb' />
+              <ListItemSecondaryAction>
+                <SwitchCheckBoxes edge='end' checked={switchChecked.indexOf('do-not-disturb') !== -1} onChange={handleToggle('do-not-disturb')} sx={switchStyle}
+                />
+              </ListItemSecondaryAction>
+            </ListItem>
+          </List>
         </Box>
+      </Grid>
+
+      <Grid item xs={12} md={4} >
+        <Box sx={{ boxShadow: 3, borderRadius: 1 }} m={2}>
+          <Box sx={{ fontSize: "18px", fontWeight: 400, padding: 2 }}>Sticky Subheader </Box>
+          <List subheader={<li />} sx={{ maxHeight: 300, overflow: 'auto', position: 'relative' }}>
+            {[0, 1, 2, 3, 4].map(sectionId => (
+              <Box component='li' key={`section-${sectionId}`} sx={{ backgroundColor: 'background.paper' }}>
+                <Box component='ul' sx={{ p: 0, backgroundColor: 'inherit' }}>
+                  <ListSubheader>{`I'm sticky ${sectionId}`}</ListSubheader>
+                  {[0, 1, 2].map(item => (
+                    <ListItem key={item - { sectionId } - { item }}>
+                      <ListItemText primary={`Item ${item}`} />
+                    </ListItem>
+                  ))}
+                </Box>
+              </Box>
+            ))}
+          </List>
+        </Box>
+      </Grid>
+
+      <Grid item xs={12} md={4} >
+      <Box sx={{ boxShadow: 3, borderRadius: 1 }} m={2}>
+      <StyledList disablePadding>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
+        </ListItemAvatar>
+        <div>
+          <ListItemText primary='Caroline Black' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'success.main' } }}>
+              <Icon icon='mdi:circle' fontSize='0.625rem' />
+              <Typography variant='caption'>Online</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              13 minutes ago
+            </Typography>
+          </Box>
+        </div>
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
+        </ListItemAvatar>
+        <div>
+          <ListItemText primary='Alfred Copeland' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'warning.main' } }}>
+              <Icon icon='mdi:circle' fontSize='0.625rem' />
+              <Typography variant='caption'>Away</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              11 minutes ago
+            </Typography>
+          </Box>
+        </div>
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
+        </ListItemAvatar>
+        <div>
+          <ListItemText primary='Celia Schneider' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'secondary.main' } }}>
+              <Icon icon='mdi:circle' fontSize='0.625rem' />
+              <Typography variant='caption'>Offline</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              9 minutes ago
+            </Typography>
+          </Box>
+        </div>
+
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar src='/images/avatars/5.png' alt='Celia Schneider' />
+        </ListItemAvatar>
+        <div>
+          <ListItemText primary='Max Rogan' />
+          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'error.main' } }}>
+              <Icon icon='mdi:circle' fontSize='0.625rem' />
+              <Typography variant='caption'>In Meeting</Typography>
+            </Box>
+            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+              28 minutes ago
+            </Typography>
+          </Box>
+        </div>
+
+        <ListItemSecondaryAction>
+          <Button variant='contained' size='small'>
+            Add
+          </Button>
+        </ListItemSecondaryAction>
+      </ListItem>
+    </StyledList>
+      </Box>
       </Grid>
 
     </Grid>

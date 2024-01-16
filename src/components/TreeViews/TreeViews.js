@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import { TreeView } from '@mui/x-tree-view/TreeView';
-import { TreeItem } from '@mui/x-tree-view/TreeItem';
+import { TreeView } from '@mui/x-tree-view/TreeView/TreeView';
+import { TreeItem } from '@mui/x-tree-view/TreeItem/TreeItem';
 import { styled } from '@mui/system';
 
 const StyledTreeItem = styled(TreeItem)(() => ({

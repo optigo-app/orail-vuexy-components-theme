@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import Menu from '@mui/material/Menu'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
-import { List, ListItem, ListItemButton, ListItemText } from '@mui/material'
+import { IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 
+import Grow from '@mui/material/Grow'
+import Paper from '@mui/material/Paper'
+import Popper from '@mui/material/Popper'
+import ClickAwayListener from '@mui/material/ClickAwayListener'
+import IconifyIcon from '../icon'
 
 const options = [
     'Show some love to MUI',
@@ -12,6 +17,28 @@ const options = [
     'Hide sensitive notification content',
     'Hide all notification content'
 ]
+
+
+
+const options2 = [
+    'None',
+    'Atria',
+    'Callisto',
+    'Dione',
+    'Ganymede',
+    'Hangouts Call',
+    'Luna',
+    'Oberon',
+    'Phobos',
+    'Pyxis',
+    'Sedna',
+    'Titania',
+    'Triton',
+    'Umbriel'
+]
+
+const ITEM_HEIGHT = 48
+
 
 export default function MenuList() {
 
@@ -36,6 +63,24 @@ export default function MenuList() {
         setAnchorEl2(null)
     }
 
+    const [anchorEl3, setAnchorEl3] = useState(null)
+
+    const handleClick3 = event => {
+        setAnchorEl3(event.currentTarget)
+    }
+
+    const handleClose3 = () => {
+        setAnchorEl3(null)
+    }
+
+
+    const [anchorEl4, setAnchorEl4] = useState(null)
+    const handleClick4 = event => {
+        setAnchorEl4(event.currentTarget)
+    }
+    const handleClose4 = () => {
+        setAnchorEl4(null)
+    }
 
     return (
         <div>
@@ -75,6 +120,69 @@ export default function MenuList() {
                     </MenuItem>
                 ))}
             </Menu>
-        </div>
+
+
+            <Button variant='outlined' aria-haspopup='true' onClick={handleClick3} aria-controls='customized-menu' style={{ margin: '10px' }}>
+                Open Menu
+            </Button>
+            <Menu
+                keepMounted
+                elevation={0}
+                anchorEl={anchorEl3}
+                id='customized-menu'
+                onClose={handleClose3}
+                open={Boolean(anchorEl3)}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center'
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center'
+                }}
+            >
+                <MenuItem>
+                    <ListItemIcon>
+                        <IconifyIcon icon='tabler:send' fontSize={20} />
+                    </ListItemIcon>
+                    <ListItemText primary='Sent mail' />
+                </MenuItem>
+                <MenuItem>
+                    <ListItemIcon>
+                        <IconifyIcon icon='tabler:mail-opened' fontSize={20} />
+                    </ListItemIcon>
+                    <ListItemText primary='Drafts' />
+                </MenuItem>
+                <MenuItem>
+                    <ListItemIcon>
+                        <IconifyIcon icon='tabler:inbox' fontSize={20} />
+                    </ListItemIcon>
+                    <ListItemText primary='Inbox' />
+                </MenuItem>
+            </Menu>
+
+            <h1>Max Height Menu</h1>
+            <IconButton aria-label='more' aria-controls='long-menu' aria-haspopup='true' onClick={handleClick4}>
+                <IconifyIcon icon='tabler:dots-vertical' />
+            </IconButton>
+            <Menu
+                keepMounted
+                id='long-menu'
+                anchorEl={anchorEl4}
+                onClose={handleClose4}
+                open={Boolean(anchorEl4)}
+                PaperProps={{
+                    style: {
+                        maxHeight: ITEM_HEIGHT * 4.5
+                    }
+                }}
+            >
+                {options2.map(option => (
+                    <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+                        {option}
+                    </MenuItem>
+                ))}
+            </Menu>
+        </div >
     )
 }
