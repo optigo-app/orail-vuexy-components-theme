@@ -11,13 +11,6 @@ import Avatars from './components/Avatars/Avatars'
 import MenuList from './components/Menu/Menu'
 import DatePickers from './components/DatePicker/DatePickers'
 import TextArea from './components/TextArea/TextArea';
-import TextFields from './components/TextFields/TextFields';
-
-import Dailogs from './components/Dailogs/Dailogs'
-import Avatars from './components/Avatars/Avatars'
-import MenuList from './components/Menu/Menu'
-import DatePickers from './components/DatePicker/DatePickers'
-import TextArea from './components/TextArea/TextArea'
 
 export default function App() {
   return (
