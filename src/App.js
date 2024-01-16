@@ -2,6 +2,11 @@ import React from 'react'
 import Alerts from './components/Alerts/Alerts'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Index from './components/Index'
+import Accordians from './components/Accordian/Accordians';
+import List from './components/List/List';
+import TreeView from './components/TreeView/TreeView';
+import TextFields from './components/TextFields/TextFields';
+
 import Dailogs from './components/Dailogs/Dailogs'
 import Avatars from './components/Avatars/Avatars'
 import MenuList from './components/Menu/Menu'
@@ -14,6 +19,11 @@ export default function App() {
     <Routes>
       <Route path='/' element={<Index />} /> 
       <Route path='/alerts' element={<Alerts />} /> 
+      <Route path='/accordions' element={<Accordians />} />
+      <Route path='/list' element={<List />} />
+      <Route path='/treeview' element={<TreeView />} />
+      <Route path='/textfields' element={<TextFields />} /> 
+      
       <Route path='/dailogs' element={<Dailogs />} /> 
       <Route path='/Avatars' element={<Avatars />} /> 
       <Route path='/Menu' element={<MenuList />} /> 
