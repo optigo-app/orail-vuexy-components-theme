@@ -8,7 +8,7 @@ export default function Index() {
             <li><Link to='/alerts'>Alerts</Link></li>
             <li><Link to='/accordions'>Accordions</Link></li>
             <li><Link to='/list'>List</Link></li>
-            <li><Link to='/treeview'>TreeView</Link></li>
+            <li><Link to='/treeviews'>TreeView</Link></li>
         </ul>
     </div>
   )
