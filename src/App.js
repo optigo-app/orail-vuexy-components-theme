@@ -5,6 +5,7 @@ import Index from './components/Index'
 import Accordians from './components/Accordian/Accordians';
 import List from './components/List/List';
 import TreeView from './components/TreeView/TreeView';
+import TextFields from './components/TextFields/TextFields';
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
       <Route path='/accordions' element={<Accordians />} />
       <Route path='/list' element={<List />} />
       <Route path='/treeview' element={<TreeView />} />
+      <Route path='/textfields' element={<TextFields />} /> 
       
     </Routes>
    </BrowserRouter>

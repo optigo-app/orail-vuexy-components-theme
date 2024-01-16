@@ -7,6 +7,7 @@ export default function Index() {
         <ul>
             <li><Link to='/alerts'>Alerts</Link></li>
             <li><Link to='/accordions'>Accordions</Link></li>
+            <li><Link to='/textfields'>TextFields</Link></li>
             <li><Link to='/list'>List</Link></li>
             <li><Link to='/treeview'>TreeView</Link></li>
         </ul>
