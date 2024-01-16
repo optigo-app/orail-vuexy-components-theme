@@ -25,9 +25,15 @@
 .react-datepicker__navigation{
     background-color: rgba(47, 43, 61, 0.06);
     border-radius: 25px;
+    height: 28px;
+    width: 28px;
 }
 .react-datepicker__year-read-view--down-arrow, .react-datepicker__month-read-view--down-arrow, .react-datepicker__month-year-read-view--down-arrow, .react-datepicker__navigation-icon::before{
     border-color: black;
+    border-width: 2px 2px 0 0;
+    height: 8px;
+    width: 8px;
+
 }
 .react-datepicker__month{
     font-size: 15px;
