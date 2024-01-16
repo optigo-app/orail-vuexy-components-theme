@@ -12,6 +12,7 @@ import Avatars from './components/Avatars/Avatars'
 import MenuList from './components/Menu/Menu'
 import DatePickers from './components/DatePicker/DatePickers'
 import TextArea from './components/TextArea/TextArea'
+import Badges from './components/Badges/Badges';
 
 export default function App() {
   return (
@@ -23,12 +24,12 @@ export default function App() {
       <Route path='/list' element={<List />} />
       <Route path='/treeview' element={<TreeView />} />
       <Route path='/textfields' element={<TextFields />} /> 
-      
       <Route path='/dailogs' element={<Dailogs />} /> 
       <Route path='/Avatars' element={<Avatars />} /> 
       <Route path='/Menu' element={<MenuList />} /> 
       <Route path='/DatePicker' element={<DatePickers />} /> 
       <Route path='/TextArea' element={<TextArea />} /> 
+      <Route path='/Badges' element={<Badges />} /> 
     </Routes>
    </BrowserRouter>
   )
