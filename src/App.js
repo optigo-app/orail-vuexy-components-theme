@@ -20,6 +20,7 @@ import Chips from "./components/Chips/Chips";
 import AutoCompleteMain from "./components/autocomplete/AutoCompleteMain";
 import PaginationParts from "./components/PaginationParts/PaginationParts";
 import SelectDropDowns from "./components/SelectDropDowns/SelectDropDowns";
+import CheckBoxes from "./components/CheckBoxes/CheckBoxes";
 
 export default function App() {
   return (
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/autoComplete" element={<AutoCompleteMain />} />
         <Route path="/PaginationParts" element={<PaginationParts />} />
         <Route path="/SelectDropDowns" element={<SelectDropDowns />} />
+        <Route path="/CheckBoxes" element={<CheckBoxes />} />
       </Routes>
     </BrowserRouter>
   );

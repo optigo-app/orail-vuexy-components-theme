@@ -1,9 +1,15 @@
 export const WHITE = "white";
 export const INFO = "#00CFE8";
 export const SUCCESS = "#28C76F";
+export const LIGHTSUCCESS = "#28C76F29";
 export const ERROR = "#EA5455";
+export const LIGHTERROR = "#EA545529";
 export const WARNING = "#FF9F43";
+export const LIGHTWARNING = "#FF9F4329";
 export const PRIMARY = "#655BD3";
 export const LIGHTPRIMARY = "#7367F028";
 export const SECONDARY = "#A8AAAE";
-export const LIGHTSECONDARY = "#28C76F28";
+export const LIGHTSECONDARY = "#A8AAAE29";
+export const PINK = "#D81B60";
+export const PURPLEPINK = "#d400ff";
+export const LIGHTPURPLEPINK = "#fadfff";

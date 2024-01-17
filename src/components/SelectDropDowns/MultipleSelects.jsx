@@ -45,7 +45,12 @@ const MultipleSelects = () => {
     setPersonNameNative(value);
   };
   const customStyle = {
-    "& .MuiPaper-root.MuiList-root.MuiButtonBase-root.MuiMenuItem-root.Mui-selected" : {
+    // "& .MuiPaper-root.MuiList-root.MuiButtonBase-root.MuiMenuItem-root.Mui-selected" : {
+    //     backgroundColor:`${PRIMARY} !important`,
+    //     color:`${WHITE}`,
+
+    // }
+    "& .MuiButtonBase-root-MuiMenuItem-root.Mui-selected" : {
         backgroundColor:`${PRIMARY} !important`,
         color:`${WHITE}`,
 
@@ -79,19 +84,18 @@ const MultipleSelects = () => {
           fullWidth
           label="Chip"
           id="select-multiple-chip"
-          customBorderColor= {`${PRIMARY}`}
           SelectProps={{
             MenuProps,
             multiple: true,
             value: personName,
             onChange: (e) => handleChange(e),
             renderValue: (selected) => (
-              <Box sx={{ display: "flex", flexWrap: "wrap", borderColor:`${PRIMARY}` }}>
+              <Box sx={{ display: "flex", flexWrap: "wrap" }}>
                 {selected?.map((value) => (
                   <Chip
                     key={value}
                     label={value}
-                    sx={{ m: 0.75, backgroundColor:`${PRIMARY}`, color:`${WHITE}` }}
+                    sx={{ m: 0.75 }}
                     
                   />
                 ))}
