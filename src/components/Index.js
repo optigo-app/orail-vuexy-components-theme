@@ -23,6 +23,7 @@ export default function Index() {
             <li><Link to='/autoComplete'>AutoComplete</Link></li>
             <li><Link to='/PaginationParts'>PaginationParts</Link></li>
             <li><Link to='/SelectDropDowns'>SelectDropDowns</Link></li>
+            <li><Link to='/CheckBoxes'>CheckBoxes</Link></li>
         </ul>
     </div>
   )
