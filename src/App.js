@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css"
 import Alerts from "./components/Alerts/Alerts";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Index from "./components/Index";
@@ -12,6 +13,7 @@ import MenuList from "./components/Menu/Menu";
 import DatePickers from "./components/DatePicker/DatePickers";
 import TextArea from "./components/TextArea/TextArea";
 import Badges from "./components/Badges/Badges";
+import Tabs from "./components/Tabs/Tabs";
 import Buttons from './components/Buttons/Buttons';
 import ButtonGroup from "./components/ButtonGroup/ButtonGroup";
 import Chips from "./components/Chips/Chips";
@@ -37,6 +39,7 @@ export default function App() {
         <Route path="/ButtonGroup" element={<ButtonGroup />} />
         <Route path="/Chips" element={<Chips />} />
         <Route path="/Badges" element={<Badges />} />
+        <Route path="/Tabs" element={<Tabs />} />
         <Route path="/autoComplete" element={<AutoCompleteMain />} />
       </Routes>
     </BrowserRouter>
