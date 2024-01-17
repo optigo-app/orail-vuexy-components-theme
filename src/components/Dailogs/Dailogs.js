@@ -21,8 +21,24 @@ const Transition = forwardRef(function Transition(props, ref) {
     return <Slide direction='up' ref={ref} {...props} />
 })
 
-export default function Dailogs() {
+const dialog = {
+    '& .MuiListItemAvatar-root':{
+        display: 'flex',
+        justifyContent: 'center',
+        color: '#7367F0',
+        backgroundColor: 'rgba(115, 103, 240, 0.16)',
+        borderRadius: '50%',
+        height: '50px',
+        margin: '5px 15px',
+        alignItems:'center'
+        
+    },
+    '& .MuiAvatar-root':{
+       backgroundColor: 'transparent !important'
+    }
+}
 
+export default function Dailogs() {
 
     const [open, setOpen] = useState(false)
     const [selectedValue, setSelectedValue] = useState(emails[1])
@@ -72,7 +88,7 @@ export default function Dailogs() {
                 <Button variant='outlined' onClick={handleClickOpen}>
                     Open simple dialog
                 </Button>
-                <Dialog onClose={handleDialogClose} aria-labelledby='simple-dialog-title' open={open}>
+                <Dialog onClose={handleDialogClose} aria-labelledby='simple-dialog-title' open={open} sx={dialog}>
                     <DialogTitle id='simple-dialog-title'>Set backup account</DialogTitle>
                     <List sx={{ pt: 0, px: '0 !important' }}>
                         {emails.map(email => (
@@ -80,7 +96,7 @@ export default function Dailogs() {
                                 <ListItemButton>
                                     <ListItemAvatar>
                                         {/* <Avatar skin='light'> */}
-                                        <Icon icon='tabler:user' />
+                                        <Icon icon='tabler:user' style={{fontSize: '32px' ,height: '100%'}}/>
                                         {/* </Avatar> */}
                                     </ListItemAvatar>
                                     <ListItemText primary={email} />
@@ -91,7 +107,7 @@ export default function Dailogs() {
                             <ListItemButton>
                                 <ListItemAvatar>
                                     <MuiAvatar>
-                                        <Icon icon='tabler:plus' />
+                                        <Icon icon='tabler:plus' style={{fontSize: '35px' ,height: '100px' ,color: 'gray'}}/>
                                     </MuiAvatar>
                                 </ListItemAvatar>
                                 <ListItemText primary='Add account' />
