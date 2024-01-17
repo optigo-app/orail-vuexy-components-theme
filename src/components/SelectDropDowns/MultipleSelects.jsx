@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CustomTextField from "../../mui/text-field";
 import { Box, Chip, MenuItem } from "@mui/material";
-import { PRIMARY, WARNING, WHITE } from "../../colorVariables";
+import { INFO, WHITE } from "../../colorVariables";
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -9,8 +9,6 @@ const MenuProps = {
     style: {
       width: 250,
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-    
-
     },
   },
 };
@@ -45,17 +43,17 @@ const MultipleSelects = () => {
     setPersonNameNative(value);
   };
   const customStyle = {
-    // "& .MuiPaper-root.MuiList-root.MuiButtonBase-root.MuiMenuItem-root.Mui-selected" : {
-    //     backgroundColor:`${PRIMARY} !important`,
-    //     color:`${WHITE}`,
+    "&.Mui-selected": {
+      backgroundColor: `${INFO}`, // Change the background color for the selected MenuItem
+      color: `${WHITE}`,
+      fontWeight: "bold", // Change the text color for the selected MenuItem
+    },
+    "&.Mui-selected:hover": {
+      backgroundColor: `#5ce9fa`, // Change the background color for the selected MenuItem
+      color: `${WHITE}`, // Change the text color for the selected MenuItem
+    },
+  };
 
-    // }
-    "& .MuiButtonBase-root-MuiMenuItem-root.Mui-selected" : {
-        backgroundColor:`${PRIMARY} !important`,
-        color:`${WHITE}`,
-
-    }
-  }
   return (
     <div style={{ margin: "1rem" }}>
       <div style={{ margin: "1rem" }}>
@@ -94,9 +92,13 @@ const MultipleSelects = () => {
                 {selected?.map((value) => (
                   <Chip
                     key={value}
+                    variant="contained"
                     label={value}
-                    sx={{ m: 0.75 }}
-                    
+                    sx={{
+                      m: 0.75,
+                      backgroundColor: `${INFO}`,
+                      color: `${WHITE}`,
+                    }}
                   />
                 ))}
               </Box>
@@ -107,6 +109,27 @@ const MultipleSelects = () => {
             <MenuItem key={name} value={name} sx={customStyle}>
               {name}
             </MenuItem>
+          ))}
+        </CustomTextField>
+      </div>
+      <div style={{ margin: "1rem" }}>
+        <CustomTextField
+          select
+          fullWidth
+          label="Native"
+          id="select-multiple-native"
+          SelectProps={{
+            MenuProps,
+            native: true,
+            multiple: true,
+            value: personNameNative,
+            onChange: (e) => handleChangeMultipleNative(e),
+          }}
+        >
+          {names.map((name) => (
+            <option key={name} value={name}>
+              {name}
+            </option>
           ))}
         </CustomTextField>
       </div>
