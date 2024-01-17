@@ -15,6 +15,8 @@ import Badges from "./components/Badges/Badges";
 import Buttons from './components/Buttons/Buttons';
 import ButtonGroup from "./components/ButtonGroup/ButtonGroup";
 import Chips from "./components/Chips/Chips";
+import PaginationParts from "./components/PaginationParts/PaginationParts";
+import SelectDropDowns from "./components/SelectDropDowns/SelectDropDowns";
 
 export default function App() {
   return (
@@ -36,6 +38,8 @@ export default function App() {
         <Route path="/Buttons" element={<Buttons />} />
         <Route path="/ButtonGroup" element={<ButtonGroup />} />
         <Route path="/Chips" element={<Chips />} />
+        <Route path="/PaginationParts" element={<PaginationParts />} />
+        <Route path="/SelectDropDowns" element={<SelectDropDowns />} />
       </Routes>
     </BrowserRouter>
   );
