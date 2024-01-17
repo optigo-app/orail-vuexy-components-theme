@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css"
 import Alerts from "./components/Alerts/Alerts";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Index from "./components/Index";
@@ -12,6 +13,7 @@ import MenuList from "./components/Menu/Menu";
 import DatePickers from "./components/DatePicker/DatePickers";
 import TextArea from "./components/TextArea/TextArea";
 import Badges from "./components/Badges/Badges";
+import Tabs from "./components/Tabs/Tabs";
 
 export default function App() {
   return (
@@ -30,6 +32,7 @@ export default function App() {
         <Route path="/DatePicker" element={<DatePickers />} />
         <Route path="/TextArea" element={<TextArea />} />
         <Route path="/Badges" element={<Badges />} />
+        <Route path="/Tabs" element={<Tabs />} />
       </Routes>
     </BrowserRouter>
   );

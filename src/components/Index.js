@@ -16,6 +16,7 @@ export default function Index() {
             <li><Link to='/DatePicker'>DatePicker</Link></li>
             <li><Link to='/TextArea'>TextArea</Link></li>
             <li><Link to='/badges'>Badges</Link></li>
+            <li><Link to='/Tabs'>Tabs</Link></li>
         </ul>
     </div>
   )
