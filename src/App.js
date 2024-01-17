@@ -12,6 +12,9 @@ import MenuList from "./components/Menu/Menu";
 import DatePickers from "./components/DatePicker/DatePickers";
 import TextArea from "./components/TextArea/TextArea";
 import Badges from "./components/Badges/Badges";
+import Buttons from './components/Buttons/Buttons';
+import ButtonGroup from "./components/ButtonGroup/ButtonGroup";
+import Chips from "./components/Chips/Chips";
 import AutoCompleteMain from "./components/autocomplete/AutoCompleteMain";
 
 export default function App() {
@@ -31,6 +34,9 @@ export default function App() {
         <Route path="/DatePicker" element={<DatePickers />} />
         <Route path="/TextArea" element={<TextArea />} />
         <Route path="/Badges" element={<Badges />} />
+        <Route path="/Buttons" element={<Buttons />} />
+        <Route path="/ButtonGroup" element={<ButtonGroup />} />
+        <Route path="/Chips" element={<Chips />} />
         <Route path="/autoComplete" element={<AutoCompleteMain />} />
       </Routes>
     </BrowserRouter>
