@@ -6,14 +6,14 @@ import ListItemText from '@mui/material/ListItemText'
 import ListItemButton from '@mui/material/ListItemButton'
 import { Fragment, useState } from 'react'
 import { Icon } from '@iconify/react'
-import { Avatar, Box, Checkbox, Collapse, Container, Grid, IconButton, ListItemAvatar, ListItemSecondaryAction, ListSubheader, Paper, Switch, Button, Typography  } from '@mui/material';
+import { Avatar, Box, Checkbox, Collapse, Container, Grid, IconButton, ListItemAvatar, ListItemSecondaryAction, ListSubheader, Paper, Switch, Button, Typography, LinearProgress } from '@mui/material';
 import { makeStyles, styled } from '@mui/styles';
 
 // ** Custom Component Imports
 
 // backgroundColor: "#7367f014 !important",
 // color: "#7367F0 !important",
-
+ 
 const ListItems = styled(ListItem)(({ theme }) => ({
   '&:hover': {
     backgroundColor: "#7367f014 !important",
@@ -64,15 +64,16 @@ const SwitchCheckBoxes = styled(Switch)(({ theme }) => ({
 }));
 
 const StyledList = styled(List)(({ theme }) => ({
+  padding: "10px 15px 30px 15px !important",
   '& .MuiListItem-container': {
     border: "1px solid rgba(47, 43, 61, 0.16)",
     '&:first-of-type': {
-      borderTopLeftRadius: "6px",
-      borderTopRightRadius: "6px"
+      borderTopLeftRadius: "6px !important",
+      borderTopRightRadius: "6px !important"
     },
     '&:last-child': {
-      borderBottomLeftRadius: "6px",
-      borderBottomRightRadius: "6px"
+      borderBottomLeftRadius: "6px !important",
+      borderBottomRightRadius: "6px !important"
     },
     '&:not(:last-child)': {
       borderBottom: 0
@@ -80,11 +81,26 @@ const StyledList = styled(List)(({ theme }) => ({
     '& .MuiListItem-root': {
       paddingRight: "24px"
     },
-    '& .MuiListItemText-root': {
-      marginTop: 0,
+    '& .MuiListItemText-root .MuiTypography-root': {
+      marginTop: '0 !important',
+      fontWeight: '500 !important',
+      fontSize: '15px !important',
+      lineHeight: '1.467 !important',
+      color: 'rgba(47, 43, 61, 0.78) !important',
+      opacity: "1",
       '& .MuiTypography-root': {
         fontWeight: 500
       }
+    },
+    '& .MuiListItem-gutters .MuiBox-root .MuiBox-root': {
+      opacity: "0.5 !important",
+    },
+    '& .MuiButton-contained': {
+      color: '#FFF !important',
+      backgroundColor: '#7367F0 !important',
+      textTransform: "unset !important",
+      fontWeight: "500 !important",
+      fontSize: "13px !important",
     }
   }
 }))
@@ -168,6 +184,76 @@ const Lists = () => {
       backgroundColor: "#7367f0 !important",
       opacity: "1 !important",
       border: "1.5px solid #7367f0!important",
+    }
+  }
+
+  const StyledList2 ={
+    padding: "10px 15px 30px 15px !important",
+    '& .MuiList-root': {
+      border: "1px solid #2f2b3d21 !important", 
+      borderRadius: "10px !important",
+      '& .MuiListItem-root': {
+        borderBottom: "1px solid #2f2b3d21 !important", 
+        padding: "15px !important",
+        '& .MuiListItemText-primary': {
+          color: "rgba(47, 43, 61, 0.78) !important",
+          fontWeight: "500 !important",
+        }
+      },
+      '& .MuiListItem-root:nth-child(1)': {
+        '& .MuiAvatar-root': {
+          backgroundColor: "rgba(0, 207, 232, 0.16) !important",
+          color: '#00CFE8 !important',
+          }
+      },
+      '& .MuiListItem-root:nth-child(2)': {
+        '& .MuiAvatar-root': {
+          backgroundColor: "rgba(115, 103, 240, 0.16) !important",
+          color: '#7367F0 !important',
+          }
+      }, 
+      '& .MuiListItem-root:nth-child(3)': {
+        '& .MuiAvatar-root': {
+          backgroundColor: "rgba(40, 199, 111, 0.16) !important",
+          color: '#28C76F !important',
+          }
+      }, 
+      '& .MuiListItem-root:nth-child(4)': {
+        '& .MuiAvatar-root': {
+          backgroundColor: "rgba(234, 84, 85, 0.16) !important",
+          color: '#EA5455 !important',
+          }
+      }, 
+      '& .MuiListItem-root:nth-child(5)': {
+        '& .MuiAvatar-root': {
+          backgroundColor: "rgba(255, 159, 67, 0.16) !important",
+          color: '#FF9F43 !important',
+          }
+      }
+
+    },
+    '& .MuiListItem-container': {
+      border: "1px solid rgba(47, 43, 61, 0.78)",
+      '&:first-of-type': {
+        borderTopLeftRadius: "6px",
+        borderTopRightRadius: "6px"
+      },
+      '&:last-child': {
+        borderBottomLeftRadius: "6px",
+        borderBottomRightRadius: "6px"
+      },
+      '&:not(:last-child)': {
+        borderBottom: 0
+      },
+      '& .MuiListItem-root': {
+        paddingRight: "15px"
+      },
+      '& .MuiListItemText-root': {
+        marginTop: 0,
+        '& .MuiTypography-root': {
+          fontWeight: 500
+        }
+      }
     }
   }
 
@@ -357,7 +443,7 @@ const Lists = () => {
             </ListItems>
           </List>
         </Box>
-      </Grid>
+      </Grid> 
 
       <Grid item xs={12} md={4} >
         <Box sx={{ boxShadow: 3, borderRadius: 1 }} m={2}>
@@ -565,100 +651,166 @@ const Lists = () => {
       </Grid>
 
       <Grid item xs={12} md={4} >
-      <Box sx={{ boxShadow: 3, borderRadius: 1 }} m={2}>
-      <StyledList disablePadding>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src='/images/avatars/2.png' alt='Caroline Black' />
-        </ListItemAvatar>
-        <div>
-          <ListItemText primary='Caroline Black' />
-          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'success.main' } }}>
-              <Icon icon='mdi:circle' fontSize='0.625rem' />
-              <Typography variant='caption'>Online</Typography>
-            </Box>
-            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
-              13 minutes ago
-            </Typography>
-          </Box>
-        </div>
-        <ListItemSecondaryAction>
-          <Button variant='contained' size='small'>
-            Add
-          </Button>
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src='/images/avatars/1.png' alt='Alfred Copeland' />
-        </ListItemAvatar>
-        <div>
-          <ListItemText primary='Alfred Copeland' />
-          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'warning.main' } }}>
-              <Icon icon='mdi:circle' fontSize='0.625rem' />
-              <Typography variant='caption'>Away</Typography>
-            </Box>
-            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
-              11 minutes ago
-            </Typography>
-          </Box>
-        </div>
-        <ListItemSecondaryAction>
-          <Button variant='contained' size='small'>
-            Add
-          </Button>
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src='/images/avatars/8.png' alt='Celia Schneider' />
-        </ListItemAvatar>
-        <div>
-          <ListItemText primary='Celia Schneider' />
-          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'secondary.main' } }}>
-              <Icon icon='mdi:circle' fontSize='0.625rem' />
-              <Typography variant='caption'>Offline</Typography>
-            </Box>
-            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
-              9 minutes ago
-            </Typography>
-          </Box>
-        </div>
+        <Box sx={{ boxShadow: 3, borderRadius: 1 }} m={2}>
+          <Box sx={{ fontSize: "18px", fontWeight: 400, padding: 2 }}> Users List</Box>
+          <StyledList disablePadding>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt='Caroline Black' />
+              </ListItemAvatar>
+              <div>
+                <ListItemText primary='Caroline Black' />
+                <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'success.main' } }}>
+                    <Icon icon='mdi:circle' fontSize='0.625rem' />
+                    <Typography variant='caption'>Online</Typography>
+                  </Box>
+                  <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                    13 minutes ago
+                  </Typography>
+                </Box>
+              </div>
+              <ListItemSecondaryAction>
+                <Button variant='contained' size='small'>
+                  Add
+                </Button>
+              </ListItemSecondaryAction>
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt='Alfred Copeland' />
+              </ListItemAvatar>
+              <div>
+                <ListItemText primary='Alfred Copeland' />
+                <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'warning.main' } }}>
+                    <Icon icon='mdi:circle' fontSize='0.625rem' />
+                    <Typography variant='caption'>Away</Typography>
+                  </Box>
+                  <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                    11 minutes ago
+                  </Typography>
+                </Box>
+              </div>
+              <ListItemSecondaryAction>
+                <Button variant='contained' size='small'>
+                  Add
+                </Button>
+              </ListItemSecondaryAction>
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt='Celia Schneider' />
+              </ListItemAvatar>
+              <div>
+                <ListItemText primary='Celia Schneider' />
+                <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'secondary.main' } }}>
+                    <Icon icon='mdi:circle' fontSize='0.625rem' />
+                    <Typography variant='caption'>Offline</Typography>
+                  </Box>
+                  <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                    9 minutes ago
+                  </Typography>
+                </Box>
+              </div>
 
-        <ListItemSecondaryAction>
-          <Button variant='contained' size='small'>
-            Add
-          </Button>
-        </ListItemSecondaryAction>
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar src='/images/avatars/5.png' alt='Celia Schneider' />
-        </ListItemAvatar>
-        <div>
-          <ListItemText primary='Max Rogan' />
-          <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
-            <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'error.main' } }}>
-              <Icon icon='mdi:circle' fontSize='0.625rem' />
-              <Typography variant='caption'>In Meeting</Typography>
-            </Box>
-            <Typography variant='caption' sx={{ color: 'text.disabled' }}>
-              28 minutes ago
-            </Typography>
-          </Box>
-        </div>
+              <ListItemSecondaryAction>
+                <Button variant='contained' size='small'>
+                  Add
+                </Button>
+              </ListItemSecondaryAction>
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt='Celia Schneider' />
+              </ListItemAvatar>
+              <div>
+                <ListItemText primary='Max Rogan' />
+                <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <Box sx={{ mr: 3, display: 'flex', alignItems: 'center', '& svg': { mr: 1, color: 'error.main' } }}>
+                    <Icon icon='mdi:circle' fontSize='0.625rem' />
+                    <Typography variant='caption'>In Meeting</Typography>
+                  </Box>
+                  <Typography variant='caption' sx={{ color: 'text.disabled' }}>
+                    28 minutes ago
+                  </Typography>
+                </Box>
+              </div>
 
-        <ListItemSecondaryAction>
-          <Button variant='contained' size='small'>
-            Add
-          </Button>
-        </ListItemSecondaryAction>
-      </ListItem>
-    </StyledList>
-      </Box>
+              <ListItemSecondaryAction>
+                <Button variant='contained' size='small'>
+                  Add
+                </Button>
+              </ListItemSecondaryAction>
+            </ListItem>
+          </StyledList>
+        </Box>
+      </Grid>
+
+      <Grid item xs={12} md={4} >
+        <Box sx={{ boxShadow: 3, borderRadius: 1 }} m={2}>
+          <Box sx={{ fontSize: "18px", fontWeight: 400, padding: 2 }}> Users List</Box>
+        <Box sx={StyledList2}>
+        <List disablePadding>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar skin='light' variant='rounded' color='info' sx={{ height: 36, width: 36 }}>
+                  <Icon icon='tabler:brand-react' />
+                </Avatar>
+              </ListItemAvatar>
+              <Box sx={{ width: '100%' }}>
+                <ListItemText primary='React is a JavaScript library for building user interfaces' />
+                <LinearProgress color='info' value={90} sx={{ height: 5 }} variant='determinate' />
+              </Box>
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar skin='light' variant='rounded' sx={{ height: 36, width: 36 }}>
+                  <Icon icon='tabler:brand-bootstrap' />
+                </Avatar>
+              </ListItemAvatar>
+              <Box sx={{ width: '100%' }}>
+                <ListItemText primary='Bootstrap is an open source toolkit' />
+                <LinearProgress value={75} sx={{ height: 5 }} variant='determinate' />
+              </Box>
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar skin='light' variant='rounded' color='success' sx={{ height: 36, width: 36 }}>
+                  <Icon icon='tabler:brand-vue' />
+                </Avatar>
+              </ListItemAvatar>
+              <Box sx={{ width: '100%' }}>
+                <ListItemText primary='Vue.js is the Progressive JavaScript Framework' />
+                <LinearProgress color='success' value={85} sx={{ height: 5 }} variant='determinate' />
+              </Box>
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar skin='light' variant='rounded' color='error' sx={{ height: 36, width: 36 }}>
+                  <Icon icon='tabler:brand-angular' />
+                </Avatar>
+              </ListItemAvatar>
+              <Box sx={{ width: '100%' }}>
+                <ListItemText primary='Angular implements Functional Programming concepts' />
+                <LinearProgress color='error' value={60} sx={{ height: 5 }} variant='determinate' />
+              </Box>
+            </ListItem>
+            <ListItem>
+              <ListItemAvatar>
+                <Avatar skin='light' variant='rounded' color='warning' sx={{ height: 36, width: 36 }}>
+                  <Icon icon='tabler:brand-javascript' />
+                </Avatar>
+              </ListItemAvatar>
+              <Box sx={{ width: '100%' }}>
+                <ListItemText primary='JavaScript is the programming language of the Web' />
+                <LinearProgress color='warning' value={70} sx={{ height: 5 }} variant='determinate' />
+              </Box>
+            </ListItem>
+          </List>
+        </Box>
+        </Box>
       </Grid>
 
     </Grid>
