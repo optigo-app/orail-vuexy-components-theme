@@ -18,6 +18,8 @@ import Buttons from './components/Buttons/Buttons';
 import ButtonGroup from "./components/ButtonGroup/ButtonGroup";
 import Chips from "./components/Chips/Chips";
 import AutoCompleteMain from "./components/autocomplete/AutoCompleteMain";
+import PaginationParts from "./components/PaginationParts/PaginationParts";
+import SelectDropDowns from "./components/SelectDropDowns/SelectDropDowns";
 
 export default function App() {
   return (
@@ -41,6 +43,8 @@ export default function App() {
         <Route path="/Badges" element={<Badges />} />
         <Route path="/Tabs" element={<Tabs />} />
         <Route path="/autoComplete" element={<AutoCompleteMain />} />
+        <Route path="/PaginationParts" element={<PaginationParts />} />
+        <Route path="/SelectDropDowns" element={<SelectDropDowns />} />
       </Routes>
     </BrowserRouter>
   );

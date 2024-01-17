@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 export default function Index() {
   return (
@@ -21,6 +21,8 @@ export default function Index() {
             <li><Link to='/buttongroup'>Button Group</Link></li>
             <li><Link to='/chips'>Chips</Link></li>
             <li><Link to='/autoComplete'>AutoComplete</Link></li>
+            <li><Link to='/PaginationParts'>PaginationParts</Link></li>
+            <li><Link to='/SelectDropDowns'>SelectDropDowns</Link></li>
         </ul>
     </div>
   )
