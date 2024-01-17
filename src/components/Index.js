@@ -16,14 +16,11 @@ export default function Index() {
             <li><Link to='/DatePicker'>DatePicker</Link></li>
             <li><Link to='/TextArea'>TextArea</Link></li>
             <li><Link to='/badges'>Badges</Link></li>
-<<<<<<< HEAD
             <li><Link to='/Tabs'>Tabs</Link></li>
-=======
             <li><Link to='/buttons'>Buttons</Link></li>
             <li><Link to='/buttongroup'>Button Group</Link></li>
             <li><Link to='/chips'>Chips</Link></li>
             <li><Link to='/autoComplete'>AutoComplete</Link></li>
->>>>>>> 1c3253c815a89a1990405547017c752afa697b8c
         </ul>
     </div>
   )
