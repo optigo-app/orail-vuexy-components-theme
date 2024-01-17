@@ -16,6 +16,7 @@ import Buttons from './components/Buttons/Buttons';
 import ButtonGroup from "./components/ButtonGroup/ButtonGroup";
 import Chips from "./components/Chips/Chips";
 import Cards from './components/Cards/Cards';
+import InputMask from "./components/InputMask/InputMask";
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
         <Route path="/ButtonGroup" element={<ButtonGroup />} />
         <Route path="/Chips" element={<Chips />} />
         <Route path='/cards' element={<Cards />} />
+        <Route path='/inputmask' element={<InputMask />} />
       </Routes>
     </BrowserRouter>
   );

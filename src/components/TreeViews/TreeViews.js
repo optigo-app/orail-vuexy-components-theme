@@ -6,15 +6,15 @@ import { TreeItem } from '@mui/x-tree-view/TreeItem';
 const styleObj = {
     
     '& .MuiTreeItem-content.Mui-selected': {
-        backgroundColor:'#7367f030',
+        backgroundColor:'#7367f00f',
         color: 'black',
         '&:hover': {
-            backgroundColor: '#7367f030' ,
+            backgroundColor: '#7367f02e' ,
           },
       },
 
-    '& .Mui-focused':{
-        backgroundColor:'#7367f030'
+    '& .MuiTreeItem-content.Mui-selected.Mui-focused':{
+        backgroundColor:'#7367f02e'
     },
 }
 

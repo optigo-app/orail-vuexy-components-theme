@@ -20,6 +20,7 @@ export default function Index() {
             <li><Link to='/buttongroup'>Button Group</Link></li>
             <li><Link to='/chips'>Chips</Link></li>
             <li><Link to='/cards'>Cards</Link></li>
+            <li><Link to='/inputmask'>InputMask</Link></li>
         </ul>
     </div>
   )
