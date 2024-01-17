@@ -30,16 +30,16 @@ const Chip3 = () => {
     },
   ]);
   const handleDelete  = (e) => {
-    console.info('deleted', e?.key)
+    console.info('deleted')
   }
   return (
     <div>
       <div style={{ margin: "1rem" }}>Chips Array</div>
       <div style={{ display: "flex", margin: "1rem" }}>
-        <div>
+        <div style={{display:'flex'}}>
           {chipData?.map((e, i) => {
             return (
-              <div key={i}>
+              <div key={i}  style={{margin:'1rem'}}>
                 <Chip key={e?.key} label={e?.label} avatar={<Avatar src={e?.avatar} />} onDelete={(e) => handleDelete(e)} />
               </div>
             );
