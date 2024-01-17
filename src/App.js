@@ -33,10 +33,10 @@ export default function App() {
         <Route path="/Menu" element={<MenuList />} />
         <Route path="/DatePicker" element={<DatePickers />} />
         <Route path="/TextArea" element={<TextArea />} />
-        <Route path="/Badges" element={<Badges />} />
         <Route path="/Buttons" element={<Buttons />} />
         <Route path="/ButtonGroup" element={<ButtonGroup />} />
         <Route path="/Chips" element={<Chips />} />
+        <Route path="/Badges" element={<Badges />} />
         <Route path="/autoComplete" element={<AutoCompleteMain />} />
       </Routes>
     </BrowserRouter>
