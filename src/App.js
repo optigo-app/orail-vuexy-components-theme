@@ -11,6 +11,7 @@ import Avatars from './components/Avatars/Avatars'
 import MenuList from './components/Menu/Menu'
 import DatePickers from './components/DatePicker/DatePickers'
 import TextArea from './components/TextArea/TextArea';
+import Cards from './components/Cards/Cards';
 
 export default function App() {
   return (
@@ -22,18 +23,12 @@ export default function App() {
       <Route path='/list' element={<Lists />} />
       <Route path='/treeviews' element={<TreeViews />} />
       <Route path='/textfields' element={<TextFields />} /> 
-      <Route path='/textfields' element={<TextFields />} /> 
-      
       <Route path='/dailogs' element={<Dailogs />} /> 
-      <Route path='/Avatars' element={<Avatars />} /> 
-      <Route path='/Menu' element={<MenuList />} /> 
-      <Route path='/DatePicker' element={<DatePickers />} /> 
+      <Route path='/Avatars' element={<Avatars />} />  
       <Route path='/TextArea' element={<TextArea />} /> 
-      <Route path='/dailogs' element={<Dailogs />} /> 
-      <Route path='/Avatars' element={<Avatars />} /> 
       <Route path='/Menu' element={<MenuList />} /> 
-      <Route path='/DatePicker' element={<DatePickers />} /> 
-      <Route path='/TextArea' element={<TextArea />} /> 
+      <Route path='/DatePicker' element={<DatePickers />} />
+      <Route path='/cards' element={<Cards />} />
     </Routes>
    </BrowserRouter>
   )

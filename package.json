@@ -12,7 +12,6 @@
     "@mui/styles": "^5.15.4",
     "@mui/system": "^5.15.4",
     "@mui/x-date-pickers": "^6.19.0",
-    "@mui/styles": "^5.15.4",
     "@mui/x-tree-view": "^6.17.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -53,8 +52,5 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  },
-  "devDependencies": {
-    "@iconify/react": "^4.1.1"
   }
 }
