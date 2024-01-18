@@ -5,6 +5,7 @@ import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import { Icon } from '@iconify/react';
 import styled from 'styled-components';
+import MuiTabList from '@mui/lab/TabList'
 
 const tabRippleLineCss = {
     '& .MuiTabs-indicator': {
@@ -89,14 +90,57 @@ const tabType4 = {
     '& .Mui-selected': {
         color: "#7367F0",
     }
-   
+
 }
+
+const TabList5 = {
+    borderRight: 0,
+    '&, & .MuiTabs-scroller': {
+        boxSizing: 'content-box',
+        // padding: theme.spacing(1.25, 1.25, 2),
+        // margin: {theme.spacing(-1.25, -1.25, -2)} !important
+    },
+    '& .MuiTabs-indicator': {
+        display: 'none'
+    },
+    '& .Mui-selected': {
+        // boxShadow: theme.shadows[2],
+        backgroundColor: '#7367F0',
+        color: 'white !important'
+    },
+    '& .MuiTab-root': {
+        lineHeight: 1,
+        borderRadius: 2,
+        '&:hover': {
+            //   color: theme.palette.primary.main
+        }
+    },
+    '& .css-1g4ac1o-MuiTabs-root': {
+        overflow: 'visible!important'
+    },
+    '& .css-1h9z7r5-MuiButtonBase-root-MuiTab-root': {
+        width: '150px',
+    }
+}
+
 const Tabs = () => {
 
     const [tabSecvalue1, setTabSecvalueValue1] = useState('1');
     const [tabSecvalue2, setTabSecvalueValue2] = useState('1');
     const [tabSecvalue3, setTabSecvalueValue3] = useState('1');
     const [tabSecvalue4, setTabSecvalueValue4] = useState('1');
+    const [value, setValue] = useState('1')
+    const [value6, setValue6] = useState('1')
+    const [value7, setValue7] = useState('1')
+
+    const handleChange7 = (event, newValue) => {
+        setValue7(newValue)
+    }
+
+    const handleChange6 = (event, newValue) => {
+        setValue6(newValue)
+    }
+
     const handleChangeTabSec1 = (event, newValue) => {
         setTabSecvalueValue1(newValue)
     }
@@ -111,6 +155,11 @@ const Tabs = () => {
 
     const handleChangeTabSec4 = (event, newValue) => {
         setTabSecvalueValue4(newValue)
+    }
+
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue)
     }
 
     return (
@@ -222,7 +271,7 @@ const Tabs = () => {
 
             <Grid item xs={12} md={4}>
                 <Box sx={{ boxShadow: 3, borderRadius: 1, padding: 2, ...commonRippleLine, ...tabType4 }} m={2}>
-                    <Box sx={{ fontSize: "18px", fontWeight: 400, padding: 2 }}>Tabs</Box>
+                    <Box sx={{ fontSize: "18px", fontWeight: 400, padding: 2 }}>Vertical Tabs</Box>
                     <TabContext value={tabSecvalue4}>
                         <Box sx={{ display: 'flex' }}>
                             <TabList orientation='vertical' onChange={handleChangeTabSec4} aria-label='vertical tabs example'>
@@ -249,6 +298,115 @@ const Tabs = () => {
                                 </Typography>
                             </TabPanel>
                         </Box>
+                    </TabContext>
+                </Box>
+            </Grid>
+
+            <Grid item xs={12} md={4}>
+                <Box sx={{ boxShadow: 3, borderRadius: 1, padding: 2, ...commonRippleLine, ...TabList5 }} m={2}>
+                    <Box sx={{ fontSize: "18px", fontWeight: 400, padding: 2 }}>Customized Vertical Tabs</Box>
+                    <TabContext value={value}>
+                        <Box sx={{ display: 'flex' }}>
+                            <TabList orientation='vertical' onChange={handleChange} aria-label='vertical tabs example' >
+                                <Tab value='1' label='Tab 1' />
+                                <Tab value='2' label='Tab 2' />
+                                <Tab value='3' label='Tab 3' />
+                            </TabList>
+                            <TabPanel value='1'>
+                                <Typography>
+                                    Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer
+                                    jelly cake caramels brownie gummies.
+                                </Typography>
+                            </TabPanel>
+                            <TabPanel value='2'>
+                                <Typography>
+                                    Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
+                                    sesame snaps halvah.
+                                </Typography>
+                            </TabPanel>
+                            <TabPanel value='3'>
+                                <Typography>
+                                    Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
+                                    carrot cake gummi bears.
+                                </Typography>
+                            </TabPanel>
+                        </Box>
+                    </TabContext>
+                </Box>
+            </Grid>
+
+            <Grid item xs={12} md={4}>
+                <Box sx={{ boxShadow: 3, borderRadius: 1, padding: 2, ...commonRippleLine }} m={2}>
+                    <Box sx={{ fontSize: "18px", fontWeight: 400, padding: 2 }}>Nav Tabs</Box>
+                    <TabContext value={value6}>
+                        <TabList onChange={handleChange6} aria-label='nav tabs example'>
+                            <Tab value='1' component='a' label='Tab 1' href='/drafts' onClick={e => e.preventDefault()} />
+                            <Tab value='2' component='a' label='Tab 2' href='/trash' onClick={e => e.preventDefault()} />
+                            <Tab value='3' component='a' label='Tab 3' href='/spam' onClick={e => e.preventDefault()} />
+                        </TabList>
+                        <TabPanel value='1'>
+                            <Typography>
+                                Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
+                                cake caramels brownie gummies.
+                            </Typography>
+                        </TabPanel>
+                        <TabPanel value='2'>
+                            <Typography>
+                                Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
+                                sesame snaps halvah.
+                            </Typography>
+                        </TabPanel>
+                        <TabPanel value='3'>
+                            <Typography>
+                                Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
+                                carrot cake gummi bears.
+                            </Typography>
+                        </TabPanel>
+                    </TabContext>
+                </Box>
+            </Grid>
+
+            <Grid item xs={12} md={4}>
+                <Box sx={{ boxShadow: 3, borderRadius: 1, padding: 2, ...commonRippleLine }} m={2}>
+                    <Box sx={{ fontSize: "18px", fontWeight: 400, padding: 2 }}>Forced Scroll Buttons</Box>
+                    <TabContext value={value7}>
+                        <TabList scrollButtons variant='scrollable' onChange={handleChange7} aria-label='forced scroll tabs example'>
+                            <Tab value='1' label='Tab 1' icon={<Icon icon='tabler:phone' style={{fontSize: '20px'}}/>} />
+                            <Tab value='2' label='Tab 2' icon={<Icon icon='tabler:heart' style={{fontSize: '20px'}}/>} />
+                            <Tab value='3' label='Tab 3' icon={<Icon icon='tabler:thumb-up' style={{fontSize: '20px'}}/>} />
+                            <Tab value='4' label='Tab 4' icon={<Icon icon='tabler:user' style={{fontSize: '20px'}}/>} />
+                            <Tab value='5' label='Tab 5' icon={<Icon icon='tabler:thumb-down' style={{fontSize: '20px'}}/>} />
+                        </TabList>
+                        <TabPanel value='1'>
+                            <Typography>
+                                Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
+                                cake caramels brownie gummies.
+                            </Typography>
+                        </TabPanel>
+                        <TabPanel value='2'>
+                            <Typography>
+                                Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
+                                sesame snaps halvah.
+                            </Typography>
+                        </TabPanel>
+                        <TabPanel value='3'>
+                            <Typography>
+                                Danish tiramisu jujubes cupcake chocolate bar cake cheesecake chupa chups. Macaroon ice cream tootsie roll
+                                carrot cake gummi bears.
+                            </Typography>
+                        </TabPanel>
+                        <TabPanel value='4'>
+                            <Typography>
+                                Cake apple pie chupa chups biscuit liquorice tootsie roll liquorice sugar plum. Cotton candy wafer wafer jelly
+                                cake caramels brownie gummies.
+                            </Typography>
+                        </TabPanel>
+                        <TabPanel value='5'>
+                            <Typography>
+                                Chocolate bar carrot cake candy canes sesame snaps. Cupcake pie gummi bears jujubes candy canes. Chupa chups
+                                sesame snaps halvah.
+                            </Typography>
+                        </TabPanel>
                     </TabContext>
                 </Box>
             </Grid>

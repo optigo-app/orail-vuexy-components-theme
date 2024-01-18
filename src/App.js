@@ -21,6 +21,9 @@ import AutoCompleteMain from "./components/autocomplete/AutoCompleteMain";
 import PaginationParts from "./components/PaginationParts/PaginationParts";
 import SelectDropDowns from "./components/SelectDropDowns/SelectDropDowns";
 import CheckBoxes from "./components/CheckBoxes/CheckBoxes";
+import Radio from "./components/Radio/Radio";
+import CustomInput from "./components/customInput/CustomInput";
+import FileUploader from "./components/FileUploader/FileUploader";
 import Cards from './components/Cards/Cards';
 import InputMask from "./components/InputMask/InputMask";
 import Switchs from "./components/Switch/Switchs";
@@ -52,6 +55,9 @@ export default function App() {
         <Route path="/PaginationParts" element={<PaginationParts />} />
         <Route path="/SelectDropDowns" element={<SelectDropDowns />} />
         <Route path="/CheckBoxes" element={<CheckBoxes />} />
+        <Route path="/radio" element={<Radio />} />
+        <Route path="/CustomInput" element={<CustomInput />} />
+        <Route path="/FileUploader" element={<FileUploader />} />
         <Route path='/cards' element={<Cards />} />
         <Route path='/inputmask' element={<InputMask />} />
         <Route path='/switchs' element={<Switchs />} />
