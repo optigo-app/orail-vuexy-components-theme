@@ -23,9 +23,12 @@ import SelectDropDowns from "./components/SelectDropDowns/SelectDropDowns";
 import CheckBoxes from "./components/CheckBoxes/CheckBoxes";
 import Cards from './components/Cards/Cards';
 import InputMask from "./components/InputMask/InputMask";
+import Switchs from "./components/Switch/Switchs";
+import { StyledEngineProvider } from "@mui/styled-engine";
 
 export default function App() {
   return (
+    <StyledEngineProvider injectFirst>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Index />} />
@@ -51,7 +54,9 @@ export default function App() {
         <Route path="/CheckBoxes" element={<CheckBoxes />} />
         <Route path='/cards' element={<Cards />} />
         <Route path='/inputmask' element={<InputMask />} />
+        <Route path='/switchs' element={<Switchs />} />
       </Routes>
     </BrowserRouter>
+    </StyledEngineProvider>
   );
 }

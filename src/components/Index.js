@@ -26,6 +26,7 @@ export default function Index() {
             <li><Link to='/CheckBoxes'>CheckBoxes</Link></li>
             <li><Link to='/cards'>Cards</Link></li>
             <li><Link to='/inputmask'>InputMask</Link></li>
+            <li><Link to='/switchs'>switchs</Link></li>
         </ul>
     </div>
   )
