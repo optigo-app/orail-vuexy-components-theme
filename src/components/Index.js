@@ -21,6 +21,9 @@ export default function Index() {
             <li><Link to='/buttongroup'>Button Group</Link></li>
             <li><Link to='/chips'>Chips</Link></li>
             <li><Link to='/autoComplete'>AutoComplete</Link></li>
+            <li><Link to='/radio'>Radio</Link></li>
+            <li><Link to='/CustomInput'>CustomInput</Link></li>
+            <li><Link to='/FileUploader'>FileUploader</Link></li>
         </ul>
     </div>
   )
