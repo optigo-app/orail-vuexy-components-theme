@@ -27,6 +27,9 @@ export default function Index() {
             <li><Link to='/radio'>Radio</Link></li>
             <li><Link to='/CustomInput'>CustomInput</Link></li>
             <li><Link to='/FileUploader'>FileUploader</Link></li>
+            <li><Link to='/cards'>Cards</Link></li>
+            <li><Link to='/inputmask'>InputMask</Link></li>
+            <li><Link to='/switchs'>switchs</Link></li>
         </ul>
     </div>
   )

@@ -1,33 +1,21 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import { TreeView } from '@mui/x-tree-view/TreeView/TreeView';
-import { TreeItem } from '@mui/x-tree-view/TreeItem/TreeItem';
-import { styled } from '@mui/system';
-
-const StyledTreeItem = styled(TreeItem)(() => ({
-    '& .MuiTreeItem-content.Mui-selected': {
-      backgroundColor:'#7367f030',
-      color: '#2f2b3dc7',
-      '&:hover': {
-        backgroundColor: `#7367f030` ,
-      },
-    },
-  }));
+import { TreeView } from '@mui/x-tree-view/TreeView';
+import { TreeItem } from '@mui/x-tree-view/TreeItem';
 
 const styleObj = {
+    
     '& .MuiTreeItem-content.Mui-selected': {
-        backgroundColor:'#7367f030',
+        backgroundColor:'#7367f00f',
         color: 'black',
         '&:hover': {
-          backgroundColor: '#7367f030' ,
-        },
+            backgroundColor: '#7367f02e' ,
+          },
       },
-    '& .Mui-focused':{
-        backgroundColor:'#7367f030'
+
+    '& .MuiTreeItem-content.Mui-selected.Mui-focused':{
+        backgroundColor:'#7367f02e'
     },
-    // '& .Mui-expanded':{
-    //     backgroundColor:'#7367f030'
-    // }
 }
 
 const TreeViews = () => {

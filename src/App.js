@@ -24,9 +24,14 @@ import CheckBoxes from "./components/CheckBoxes/CheckBoxes";
 import Radio from "./components/Radio/Radio";
 import CustomInput from "./components/customInput/CustomInput";
 import FileUploader from "./components/FileUploader/FileUploader";
+import Cards from './components/Cards/Cards';
+import InputMask from "./components/InputMask/InputMask";
+import Switchs from "./components/Switch/Switchs";
+import { StyledEngineProvider } from "@mui/styled-engine";
 
 export default function App() {
   return (
+    <StyledEngineProvider injectFirst>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Index />} />
@@ -53,7 +58,11 @@ export default function App() {
         <Route path="/radio" element={<Radio />} />
         <Route path="/CustomInput" element={<CustomInput />} />
         <Route path="/FileUploader" element={<FileUploader />} />
+        <Route path='/cards' element={<Cards />} />
+        <Route path='/inputmask' element={<InputMask />} />
+        <Route path='/switchs' element={<Switchs />} />
       </Routes>
     </BrowserRouter>
+    </StyledEngineProvider>
   );
 }
