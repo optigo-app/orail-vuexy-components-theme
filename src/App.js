@@ -18,6 +18,9 @@ import Buttons from './components/Buttons/Buttons';
 import ButtonGroup from "./components/ButtonGroup/ButtonGroup";
 import Chips from "./components/Chips/Chips";
 import AutoCompleteMain from "./components/autocomplete/AutoCompleteMain";
+import PaginationParts from "./components/PaginationParts/PaginationParts";
+import SelectDropDowns from "./components/SelectDropDowns/SelectDropDowns";
+import CheckBoxes from "./components/CheckBoxes/CheckBoxes";
 import Radio from "./components/Radio/Radio";
 import CustomInput from "./components/customInput/CustomInput";
 import FileUploader from "./components/FileUploader/FileUploader";
@@ -44,6 +47,9 @@ export default function App() {
         <Route path="/Badges" element={<Badges />} />
         <Route path="/Tabs" element={<Tabs />} />
         <Route path="/autoComplete" element={<AutoCompleteMain />} />
+        <Route path="/PaginationParts" element={<PaginationParts />} />
+        <Route path="/SelectDropDowns" element={<SelectDropDowns />} />
+        <Route path="/CheckBoxes" element={<CheckBoxes />} />
         <Route path="/radio" element={<Radio />} />
         <Route path="/CustomInput" element={<CustomInput />} />
         <Route path="/FileUploader" element={<FileUploader />} />
