@@ -1,0 +1,10 @@
+.css-1p823my-MuiListItem-root{
+    border: 1px solid lightgray!important;
+    display: flex!important;
+    justify-content: space-between!important;
+}
+
+.file-details{
+    display: flex;
+    align-items: center;
+}

@@ -24,6 +24,9 @@ export default function Index() {
             <li><Link to='/PaginationParts'>PaginationParts</Link></li>
             <li><Link to='/SelectDropDowns'>SelectDropDowns</Link></li>
             <li><Link to='/CheckBoxes'>CheckBoxes</Link></li>
+            <li><Link to='/radio'>Radio</Link></li>
+            <li><Link to='/CustomInput'>CustomInput</Link></li>
+            <li><Link to='/FileUploader'>FileUploader</Link></li>
         </ul>
     </div>
   )
